@@ -9,5 +9,5 @@ Releasing
  6. Checkout `gh-pages` branch (`git checkout gh-pages`)
     * If you don't have a `gh-pages` branch locally, run `git checkout -t origin/gh-pages`.
  7. Merge in `master` (`git merge master`)
- 8. Push branches (`git push`)
+ 8. Push both branches (`git push --all`)
  9. Push tag (`git push --tags`)
