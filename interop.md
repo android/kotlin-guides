@@ -11,9 +11,9 @@ A set of rules for authoring public APIs in Java and Kotlin with the intent that
 _<a href="changelog.html">Last update: {{ site.changes.first.date | date: "%Y-%m-%d" }}</a>_
 
 
-## Java (for Kotlin consumption)
+# Java (for Kotlin consumption)
 
-### No hard keywords
+## No hard keywords
 
 Do not use Kotlin's [hard keywords](https://kotlinlang.org/docs/reference/keyword-reference.html#hard-keywords) as the name of methods or fields. These require the use of backticks to escape when calling from Kotlin. [Soft keywords](https://kotlinlang.org/docs/reference/keyword-reference.html#soft-keywords), [modifier keywords](https://kotlinlang.org/docs/reference/keyword-reference.html#modifier-keywords), and [special identifiers](https://kotlinlang.org/docs/reference/keyword-reference.html#special-identifiers) are allowed.
 
@@ -25,7 +25,7 @@ Mockito.`when`(callable.call()).thenReturn(/* … */)
 ```
 
 
-### Lambda parameters last
+## Lambda parameters last
 
 Parameter types eligible for [SAM conversion](https://kotlinlang.org/docs/reference/java-interop.html#sam-conversions) should be last.
 
@@ -50,7 +50,7 @@ Flowable.create(BackpressureStrategy.LATEST) { /* … */ }
 ```
 
 
-### Property prefixes
+## Property prefixes
 
 For a method to be represented as a property in Kotlin, strict "bean"-style prefixing must be used.
 
@@ -82,7 +82,7 @@ user.name = "Bob" // Invokes user.setName(String)
 If you want methods exposed as properties, do not use non-standard prefixes like 'has'/'set' or non-'get'-prefixed accessors. Methods with non-standard prefixes are still callable as functions which may be acceptable depending on the behavior of the method.
 
 
-### Operator overloading
+## Operator overloading
 
 Be mindful of method names which allow special call-site syntax (i.e., [operator overloading](https://kotlinlang.org/docs/reference/operator-overloading.html)) in Kotlin. Ensure that methods names as such make sense to use with the shortened syntax.
 
@@ -104,16 +104,16 @@ val three = one + two // Invokes one.plus(two)
 ```
 
 
-### Nullability annotations
+## Nullability annotations
 
 Every non-primitive parameter, return, and field type in a public API should have a nullability annotation. Non-annotated types are interpreted as ["platform" types](https://kotlinlang.org/docs/reference/java-interop.html#null-safety-and-platform-types) which have ambiguous nullability.
 
 JSR 305 package annotations could be used to set up a reasonable default but are currently discouraged. They require an opt-in flag to be honored by the compiler.
 
 
-## Kotlin (for Java consumption)
+# Kotlin (for Java consumption)
 
-### File name
+## File name
 
 When a file contains top-level functions or properties, *always* annotate it with `@file:JvmName("Foo")` to provide a nice name.
 
@@ -122,31 +122,31 @@ By default, top-level members in a file `Foo.kt` will end up in a class called `
 Consider adding `@file:JvmMultifileClass` to combine the top-level members from multiple files into a single class.
 
 
-### Returning `Unit`
+## Returning `Unit`
 
 Interfaces and abstract classes which are meant to be implemented or extended by consumers in Java should not have functions which return `Unit` (implicitly or explicitly). Doing so requires specifying an explicit `return Unit.INSTANCE;` statement which is unidiomatic.
 
 Prefer defining these interfaces and abstract classes in Java so that a true `void` can be used.
 
 
-### Avoid `Nothing` generics
+## Avoid `Nothing` generics
 
 A type whose generic parameter is `Nothing` is exposed as raw types to Java. Raw types are rarely used in Java and should be avoided.
 
 
-### Document exceptions
+## Document exceptions
 
 Functions which can throw check exceptions should document them with `@Throws`. Runtime exceptions should be documented in KDoc.
 
 Be mindful of the APIs a function delegates to as they may throw checked exceptions which Kotlin otherwise silently allows to propagate.
 
 
-### Defensive copies
+## Defensive copies
 
 When returning shared or unowned read-only collections from public APIs, wrap them in an unmodifiable container or perform a defensive copy. Despite Kotlin enforcing their read-only property, there is no such enforcement on the Java side. Without the wrapper or defensive copy, invariants can be violated by returning a long-lived collection reference.
 
 
-### Companion functions
+## Companion functions
 
 Public functions in a `companion object` must be annotated with `@JvmStatic` to be exposed as a static method.
 
@@ -192,7 +192,7 @@ public final class JavaClass {
 ```
 
 
-### Companion constants
+## Companion constants
 
 Public, non-`const` properties which are [_effective constants_](TODO) in a `companion object` must be annotated with `@JvmField` to be exposed as a static field.
 
@@ -255,7 +255,7 @@ public final class JavaClass {
 }
 ```
 
-### Idiomatic naming
+## Idiomatic naming
 
 Kotlin has different calling conventions than Java which can change the way you name functions. Use `@JvmName` to design names such that they'll feel idiomatic for both language's conventions or to match their respective standard library naming.
 
@@ -285,7 +285,7 @@ public static void main(String... args) {
 }
 ```
 
-### Function overloads for defaults
+## Function overloads for defaults
 
 Functions with parameters having a default value must use `@JvmOverloads`. Without this annotation it is impossible to invoke the function using any default values.
 
