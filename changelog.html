@@ -1,0 +1,12 @@
+---
+layout: page
+title: Change log
+site_nav_category_order: 201
+is_site_nav_category2: true
+site_nav_category: contribute
+---
+
+{% for change in site.changes %}
+<h2>{{ change.date | date: "%Y-%m-%d" }}</h2>
+{{ change.content }}
+{% endfor %}
