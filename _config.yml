@@ -12,7 +12,7 @@ markdown: kramdown
 collections:
   - changes
 
-gems:
+plugins:
   - octopress-autoprefixer
   - jekyll-redirect-from
 
