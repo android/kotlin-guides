@@ -108,7 +108,7 @@ val three = one + two // Invokes one.plus(two)
 
 Every non-primitive parameter, return, and field type in a public API should have a nullability annotation. Non-annotated types are interpreted as ["platform" types](https://kotlinlang.org/docs/reference/java-interop.html#null-safety-and-platform-types) which have ambiguous nullability.
 
-JSR 305 package annotations could be used to set up a reasonable default but are currently discouraged. They require an opt-in flag to be honored by the compiler.
+JSR 305 package annotations could be used to set up a reasonable default but are currently discouraged. They require an opt-in flag to be honored by the compiler and conflict with Java 9's module system.
 
 
 # Kotlin (for Java consumption)
@@ -124,9 +124,11 @@ Consider adding `@file:JvmMultifileClass` to combine the top-level members from 
 
 ## Returning `Unit`
 
-Interfaces and abstract classes which are meant to be implemented or extended by consumers in Java should not have functions which return `Unit` (implicitly or explicitly). Doing so requires specifying an explicit `return Unit.INSTANCE;` statement which is unidiomatic.
+Interfaces and abstract classes which are meant to be implemented or extended by consumers in Java should avoid functions which return `Unit` (implicitly or explicitly). Doing so requires specifying an explicit `return Unit.INSTANCE;` statement which is unidiomatic.
 
 Prefer defining these interfaces and abstract classes in Java so that a true `void` can be used.
+
+_Note: This recommendation might change in the future. See [KT-21018](https://youtrack.jetbrains.com/issue/KT-21018)._
 
 
 ## Avoid `Nothing` generics
