@@ -659,7 +659,7 @@ val table: Map<String, Int>
 
 Each type variable is named in one of two styles:
 
- 1. A single capital letter, optionally followed but a single numeral (such as `E`, `T`, `X`, `T2`)
+ 1. A single capital letter, optionally followed by a single numeral (such as `E`, `T`, `X`, `T2`)
  2. A name in the form used for classes, followed by the capital letter `T` (such as `RequestT`, `FooBarT`)
 
 
