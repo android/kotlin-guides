@@ -260,7 +260,7 @@ The prime directive of line-wrapping is: prefer to break at a **higher syntactic
  2. When a line is broken at an _assignment_ operator the break comes _after_ the symbol.
  3. A method or constructor name stays attached to the open parenthesis (`(`) that follows it.
  4. A comma (`,`) stays attached to the token that precedes it.
- 5. A lambda arrow (`->`) stays attached to the argument list what precedes it.
+ 5. A lambda arrow (`->`) stays attached to the argument list that precedes it.
 
 Note: The primary goal for line wrapping is to have clear code, _not necessarily_ code that fits in the smallest number of lines.
 
