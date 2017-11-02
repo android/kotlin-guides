@@ -436,7 +436,7 @@ Beyond where required by the language or other style rules, and apart from liter
         it.toString()
         ```
 
- 5. Before a colon (`:`) only if used in a class decalration for specifying a base class / interfaces or when used in a `where` clause for [generic constraints](https://kotlinlang.org/docs/reference/generics.html#generic-constraints).
+ 5. Before a colon (`:`) only if used in a class declaration for specifying a base class / interfaces or when used in a `where` clause for [generic constraints](https://kotlinlang.org/docs/reference/generics.html#generic-constraints).
 
     ```kotlin
     // WRONG!
