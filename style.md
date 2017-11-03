@@ -18,7 +18,7 @@ All source files must be encoded as UTF-8.
 
 ## Naming
 
-If a source file contains only a single top-level class, the file name should reflect the case-sensitive name plus the `.kt` extension. Otherwise, if a source file contains multiple top-level declarations, choose a name the describes the contents of the file, apply PascalCase, and append the `.kt` extension.
+If a source file contains only a single top-level class, the file name should reflect the case-sensitive name plus the `.kt` extension. Otherwise, if a source file contains multiple top-level declarations, choose a name that describes the contents of the file, apply PascalCase, and append the `.kt` extension.
 
 ```kotlin
 // Foo.kt
