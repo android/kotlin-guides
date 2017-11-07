@@ -3,7 +3,7 @@ Kotlin Guides
 
 Source for the [Android Kotlin Guides][1] website.
 
-For contributor information, see the [website][2]
+For contributor information, see the [website][2].
 
 
 
