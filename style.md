@@ -446,6 +446,15 @@ Beyond where required by the language or other style rules, and apart from liter
     // Okay
     class Foo : Runnable
     ```
+    
+    ```kotlin
+    // WRONG
+    fun <T: Comparable> max(a: T, b: T)
+    ```
+    ```kotlin
+    // Okay
+    fun <T : Comparable> max(a: T, b: T)
+    ```
 
     ```kotlin
     // WRONG
