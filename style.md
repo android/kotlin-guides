@@ -99,7 +99,7 @@ Do not use a [KDoc-style](https://kotlinlang.org/docs/reference/kotlin-doc.html)
 
 ### File-level annotations
 
-Annotations with the 'file' [use-site target]() are placed between any header comment and the package declaration.
+Annotations with the 'file' [use-site target](https://kotlinlang.org/docs/reference/annotations.html#annotation-use-site-targets) are placed between any header comment and the package declaration.
 
 ### Package statement
 
