@@ -665,7 +665,7 @@ Each type variable is named in one of two styles:
 
 ## Camel case
 
-Sometimes there is more than one reasonable way to convert an English phrase into camel case, such as when acronyms or unusual constructs like "IPv6" of "iOS" are present. To improve predictability, use the following scheme.
+Sometimes there is more than one reasonable way to convert an English phrase into camel case, such as when acronyms or unusual constructs like "IPv6" or "iOS" are present. To improve predictability, use the following scheme.
 
 Beginning with the prose form of the name:
 
