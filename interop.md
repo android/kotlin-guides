@@ -261,7 +261,7 @@ public final class JavaClass {
 
 Kotlin has different calling conventions than Java which can change the way you name functions. Use `@JvmName` to design names such that they'll feel idiomatic for both language's conventions or to match their respective standard library naming.
 
-This most frequently occurs for extension functions and extension properties because the location of the receiver type is in different locations.
+This most frequently occurs for extension functions and extension properties because the location of the receiver type is different.
 
 ```kotlin
 sealed class Optional<T : Any>
