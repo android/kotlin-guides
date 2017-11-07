@@ -685,7 +685,7 @@ Beginning with the prose form of the name:
 
 Note that the casing of the original words is almost entirely disregarded.
 
-| **Prose form**         | **Correct**                             | **Incorect**        |
+| **Prose form**         | **Correct**                             | **Incorrect**       |
 |------------------------|-----------------------------------------|---------------------|
 | "XML Http Request"     | `XmlHttpRequest`                        | `XMLHTTPRequest`    |
 | "new customer ID"      | `newCustomerId`                         | `newCustomerID`     |
