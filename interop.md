@@ -252,7 +252,7 @@ class KotlinClass {
 public final class JavaClass {
     public static void main(String... args) {
         System.out.println(KotlinClass.INTEGER_ONE);
-        System.out.println(KotlinClass.BIG_INTEGER_ONE;
+        System.out.println(KotlinClass.BIG_INTEGER_ONE);
     }
 }
 ```
