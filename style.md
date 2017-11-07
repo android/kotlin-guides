@@ -247,7 +247,7 @@ Exceptions:
 
 * Lines where obeying the column limit is not possible (for example, a long URL in KDoc)
 * `package` and `import` statements
-* Command lines in a comment that may be cut-and-pasted into a shell.
+* Command lines in a comment that may be cut-and-pasted into a shell
 
 ### Where to break
 
