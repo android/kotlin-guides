@@ -349,7 +349,7 @@ Multiple consecutive blank lines are permitted, but not encouraged or ever requi
 
 Beyond where required by the language or other style rules, and apart from literals, comments, and KDoc, a single ASCII space also appears in the following places only:
 
- 1. Separating any reserved word, such as `if`, `for`, or `catch` from an open parenthesis (`(`) the follows it on that line.
+ 1. Separating any reserved word, such as `if`, `for`, or `catch` from an open parenthesis (`(`) that follows it on that line.
 
     ```kotlin
     // WRONG!
