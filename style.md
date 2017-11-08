@@ -39,7 +39,7 @@ fun <T, O> List<T>.map(func: (T) -> O): List<O> = // …
 
 Aside from the line terminator sequence, the **ASCII horizontal space character (0x20)** is the only whitespace character that appears anywhere in a source file. This implies that:
 
- 1. All other whitespace characters in string and characters literals are escaped.
+ 1. All other whitespace characters in string and character literals are escaped.
  2. Tab characters are **not** used for indentation.
 
 ### Special escape sequences
