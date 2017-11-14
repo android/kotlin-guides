@@ -10,7 +10,7 @@ This document serves as the complete definition of Google's Android coding stand
 
 Like other programming style guides, the issues covered span not only aesthetic issues of formatting, but other types of conventions or coding standards as well. However, this document focuses primarily on the hard-and-fast rules that we follow universally, and avoids giving advice that isn't clearly enforceable (whether by human or tool).
 
-_<a href="changelog.html">Last update: {{ site.changes.first.date | date: "%Y-%m-%d" }}</a>_
+_<a href="changelog.html">Last update: {{ site.changes.last.date | date: "%Y-%m-%d" }}</a>_
 
 # Source files
 

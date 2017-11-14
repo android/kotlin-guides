@@ -8,7 +8,7 @@ site_nav_category_order: 300
 
 A set of rules for authoring public APIs in Java and Kotlin with the intent that the code will feel idiomatic when consumed from the other language.
 
-_<a href="changelog.html">Last update: {{ site.changes.first.date | date: "%Y-%m-%d" }}</a>_
+_<a href="changelog.html">Last update: {{ site.changes.last.date | date: "%Y-%m-%d" }}</a>_
 
 
 # Java (for Kotlin consumption)

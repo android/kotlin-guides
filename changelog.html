@@ -6,7 +6,8 @@ is_site_nav_category2: true
 site_nav_category: contribute
 ---
 
-{% for change in site.changes %}
+{% assign sorted_changes = site.changes | sort: 'date' | reverse %}
+{% for change in sorted_changes %}
 <h2>{{ change.date | date: "%Y-%m-%d" }}</h2>
 {{ change.content }}
 {% endfor %}
