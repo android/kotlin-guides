@@ -122,13 +122,72 @@ By default, top-level members in a file `Foo.kt` will end up in a class called `
 Consider adding `@file:JvmMultifileClass` to combine the top-level members from multiple files into a single class.
 
 
-## Returning `Unit`
+## Lambda arguments
 
-Interfaces and abstract classes which are meant to be implemented or extended by consumers in Java should avoid functions which return `Unit` (implicitly or explicitly). Doing so requires specifying an explicit `return Unit.INSTANCE;` statement which is unidiomatic.
+[Function types](https://kotlinlang.org/docs/reference/lambdas.html#function-types) which are meant to be used from Java should avoid the return type `Unit`. Doing so requires specifying an explicit `return Unit.INSTANCE;` statement which is unidiomatic.
 
-Prefer defining these interfaces and abstract classes in Java so that a true `void` can be used.
+```kotlin
+fun sayHi(callback: (String) -> Unit) = /* … */
+```
+```kotlin
+// Kotlin caller:
+greeter.sayHi { Log.d("Greeting", "Hello, $it!") }
+```
+```java
+// Java caller:
+greeter.sayHi(name -> {
+    Log.d("Greeting", "Hello, " + name + "!");
+    return Unit.INSTANCE;
+});
+```
 
-_Note: This recommendation might change in the future. See [KT-21018](https://youtrack.jetbrains.com/issue/KT-21018)._
+This syntax also does not allow providing a semantically named type such that it can be implemented on other types.
+
+Defining a named, single-abstract method (SAM) interface in Kotlin for the lambda type corrects the problem for Java, but prevents lambda syntax from being used in Kotlin.
+
+```kotlin
+interface GreeterCallback {
+    fun greetName(name: String): Unit
+}
+
+fun sayHi(callback: GreeterCallback) = /* … */
+```
+```kotlin
+// Kotlin caller:
+greeter.sayHi(object : GreeterCallback {
+    override fun greetName(name: String) {
+        Log.d("Greeting", "Hello, $name!")
+    }
+})
+```
+```java
+// Java caller:
+greeter.sayHi(name -> Log.d("Greeting", "Hello, " + name + "!"))
+```
+
+Defining a named, SAM interface in Java allows the use of a slightly inferior version of the Kotlin lambda syntax where the interface type must be explicitly specified.
+
+```java
+// Defined in Java:
+interface GreeterCallback {
+    void greetName(String name);
+}
+```
+```kotlin
+fun sayHi(greeter: GreeterCallback) = /* … */
+```
+```kotlin
+// Kotlin caller:
+greeter.sayHi(GreeterCallback { Log.d("Greeting", "Hello, $it!") })
+```
+```java
+// Java caller:
+greeter.sayHi(name -> Log.d("Greeter", "Hello, " + name + "!"));
+```
+
+At present there is no way to define a parameter type for use as a lambda from both Java and Kotlin such that it feels idiomatic from both languages. The current recommendation is to prefer the function type despite the degraded experience from Java when the return type is `Unit`.
+
+_Note: This recommendation might change in the future. See [KT-7770](https://youtrack.jetbrains.com/issue/KT-7770) and [KT-21018](https://youtrack.jetbrains.com/issue/KT-21018)._
 
 
 ## Avoid `Nothing` generics
