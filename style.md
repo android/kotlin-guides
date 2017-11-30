@@ -273,13 +273,13 @@ When there are multiple continuation lines, indentation may be varied beyond +8 
 
 ### Functions
 
-When a function signature does not fit on a single line, break each parameter declaration onto its own line. Parameters defined in this format should use a continuation indent (+8). The closing parenthesis (`)`) and return type are placed on their own line with no additional indent.
+When a function signature does not fit on a single line, break each parameter declaration onto its own line. Parameters defined in this format should use a single indent (+4). The closing parenthesis (`)`) and return type are placed on their own line with no additional indent.
 
 ```kotlin
 fun <T> Iterable<T>.joinToString(
-        separator: CharSequence = ", ",
-        prefix: CharSequence = "",
-        postfix: CharSequence = ""
+    separator: CharSequence = ", ",
+    prefix: CharSequence = "",
+    postfix: CharSequence = ""
 ): String {
     // …
 }
