@@ -436,6 +436,17 @@ Beyond where required by the language or other style rules, and apart from liter
         it.toString()
         ```
 
+    *  the range operator (`..`).
+
+        ```kotlin
+        // WRONG
+        for (i in 1 .. 4) print(i)
+        ```
+        ```kotlin
+        // Okay
+        for (i in 1..4) print(i)
+        ```
+
  5. Before a colon (`:`) only if used in a class declaration for specifying a base class / interfaces or when used in a `where` clause for [generic constraints](https://kotlinlang.org/docs/reference/generics.html#generic-constraints).
 
     ```kotlin
