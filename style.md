@@ -507,7 +507,7 @@ Beyond where required by the language or other style rules, and apart from liter
     var debugging = false // disabled by default
     ```
 
-This rule is never interpreted as required or forbidding additional space at the start or end of a line; it addresses only interior space.
+This rule is never interpreted as requiring or forbidding additional space at the start or end of a line; it addresses only interior space.
 
 
 ## Specific constructs
