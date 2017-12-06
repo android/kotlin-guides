@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+- 2.4.0
+
+# Build all branches, *including* gh-pages:
+branches:
+  only:
+  - gh-pages
+  - /.*/
+
+script: bundle exec jekyll build
+
+sudo: false
+
+notifications:
+  email: false
