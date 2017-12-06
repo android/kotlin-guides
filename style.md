@@ -53,9 +53,9 @@ For the remaining non-ASCII characters, either the actual Unicode character (e.g
 | **Example**                        | **Discussion**                                                           |
 |------------------------------------|--------------------------------------------------------------------------|
 | `val unitAbbrev = "μs"`            | Best: perfectly clear even without a comment.                            |
-| `val unitAbbrev = "\u03bcs" // μs` | Poor: there's no reason to use an escape with a printable character      |
+| `val unitAbbrev = "\u03bcs" // μs` | Poor: there's no reason to use an escape with a printable character.     |
 | `val unitAbbrev = "\u03bcs"`       | Poor: the reader has no idea what this is.                               |
-| `return "\ufeff" + content`        | Good: use escapes for non-printable characters, and comment if necessary |
+| `return "\ufeff" + content`        | Good: use escapes for non-printable characters, and comment if necessary.|
 
 
 ## Structure
