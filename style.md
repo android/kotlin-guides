@@ -309,7 +309,7 @@ private val defaultCharset: Charset? =
         EncodingRegistry.getInstance().getDefaultCharsetForPropertiesFiles(file)
 ```
 
-Properties declaring a `get` and/or `set` function should place each on their only line with a normal indent (+4). Format them using the same rules as functions.
+Properties declaring a `get` and/or `set` function should place each on their own line with a normal indent (+4). Format them using the same rules as functions.
 
 ```kotlin
 var directory: File? = null
