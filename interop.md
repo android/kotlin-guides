@@ -197,7 +197,7 @@ A type whose generic parameter is `Nothing` is exposed as raw types to Java. Raw
 
 ## Document exceptions
 
-Functions which can throw check exceptions should document them with `@Throws`. Runtime exceptions should be documented in KDoc.
+Functions which can throw checked exceptions should document them with `@Throws`. Runtime exceptions should be documented in KDoc.
 
 Be mindful of the APIs a function delegates to as they may throw checked exceptions which Kotlin otherwise silently allows to propagate.
 
