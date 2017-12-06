@@ -60,7 +60,7 @@ For the remaining non-ASCII characters, either the actual Unicode character (e.g
 
 ## Structure
 
-A `.kt` file comprises of the following, in order:
+A `.kt` file comprises the following, in order:
 
 1. Copyright and/or license header (optional)
 2. File-level annotations
@@ -309,7 +309,7 @@ private val defaultCharset: Charset? =
         EncodingRegistry.getInstance().getDefaultCharsetForPropertiesFiles(file)
 ```
 
-Properties declaring a `get` and/or `set` function should place each on their only line with a normal indent (+4). Format them using the same rules as functions.
+Properties declaring a `get` and/or `set` function should place each on their own line with a normal indent (+4). Format them using the same rules as functions.
 
 ```kotlin
 var directory: File? = null
@@ -339,7 +339,7 @@ A single blank line appears:
 
  2. Between statements, as _needed_ to organize the code into logical subsections.
 
- 3. _Optionally_ before the first statement in a function, before the first member of a class, or after the last member of a class (neither encourage nor discouraged).
+ 3. _Optionally_ before the first statement in a function, before the first member of a class, or after the last member of a class (neither encouraged nor discouraged).
 
  4. As required by other sections of this document (Such as the ["Structure"](#structure) section).
 
@@ -507,7 +507,7 @@ Beyond where required by the language or other style rules, and apart from liter
     var debugging = false // disabled by default
     ```
 
-This rule is never interpreted as required or forbidding additional space at the start or end of a line; it addresses only interior space.
+This rule is never interpreted as requiring or forbidding additional space at the start or end of a line; it addresses only interior space.
 
 
 ## Specific constructs
@@ -637,7 +637,7 @@ val EMPTY_ARRAY = arrayOf<SomeMutableType>()
 
 These names are typically nouns or noun phrases.
 
-Constant values can only be defined in side of an `object` or as a top-level declaration. Values otherwise meeting the requirement of a constant but defined inside of a `class` must use a non-constant name.
+Constant values can only be defined inside of an `object` or as a top-level declaration. Values otherwise meeting the requirement of a constant but defined inside of a `class` must use a non-constant name.
 
 Constants which are scalar values must use the [`const` modifier](http://kotlinlang.org/docs/reference/properties.html#compile-time-constants).
 
