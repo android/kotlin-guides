@@ -339,7 +339,7 @@ A single blank line appears:
 
  2. Between statements, as _needed_ to organize the code into logical subsections.
 
- 3. _Optionally_ before the first statement in a function, before the first member of a class, or after the last member of a class (neither encourage nor discouraged).
+ 3. _Optionally_ before the first statement in a function, before the first member of a class, or after the last member of a class (neither encouraged nor discouraged).
 
  4. As required by other sections of this document (Such as the ["Structure"](#structure) section).
 
