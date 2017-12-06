@@ -637,7 +637,7 @@ val EMPTY_ARRAY = arrayOf<SomeMutableType>()
 
 These names are typically nouns or noun phrases.
 
-Constant values can only be defined in side of an `object` or as a top-level declaration. Values otherwise meeting the requirement of a constant but defined inside of a `class` must use a non-constant name.
+Constant values can only be defined inside of an `object` or as a top-level declaration. Values otherwise meeting the requirement of a constant but defined inside of a `class` must use a non-constant name.
 
 Constants which are scalar values must use the [`const` modifier](http://kotlinlang.org/docs/reference/properties.html#compile-time-constants).
 
