@@ -60,7 +60,7 @@ For the remaining non-ASCII characters, either the actual Unicode character (e.g
 
 ## Structure
 
-A `.kt` file comprises of the following, in order:
+A `.kt` file comprises the following, in order:
 
 1. Copyright and/or license header (optional)
 2. File-level annotations
