@@ -25,6 +25,13 @@ Mockito.`when`(callable.call()).thenReturn(/* … */)
 ```
 
 
+## Nullability annotations
+
+Every non-primitive parameter, return, and field type in a public API should have a nullability annotation. Non-annotated types are interpreted as ["platform" types](https://kotlinlang.org/docs/reference/java-interop.html#null-safety-and-platform-types) which have ambiguous nullability.
+
+JSR 305 package annotations could be used to set up a reasonable default but are currently discouraged. They require an opt-in flag to be honored by the compiler and conflict with Java 9's module system.
+
+
 ## Lambda parameters last
 
 Parameter types eligible for [SAM conversion](https://kotlinlang.org/docs/reference/java-interop.html#sam-conversions) should be last.
@@ -103,12 +110,6 @@ val two = IntBox(2)
 val three = one + two // Invokes one.plus(two)
 ```
 
-
-## Nullability annotations
-
-Every non-primitive parameter, return, and field type in a public API should have a nullability annotation. Non-annotated types are interpreted as ["platform" types](https://kotlinlang.org/docs/reference/java-interop.html#null-safety-and-platform-types) which have ambiguous nullability.
-
-JSR 305 package annotations could be used to set up a reasonable default but are currently discouraged. They require an opt-in flag to be honored by the compiler and conflict with Java 9's module system.
 
 
 # Kotlin (for Java consumption)
@@ -391,3 +392,48 @@ public class JavaClass {
     }
 }
 ```
+
+
+
+# Lint Checks
+
+## Requirements
+
+* **Android Studio version:** 3.2 Canary 10 or later
+* **Android Gradle Plugin version:** 3.2.0-alpha10 or later
+
+## Supported Checks
+
+There are now Android Lint checks that will help you detect and flag some of the interoperability issues described above. Only issues in Java (for Kotlin consumption) are detected currently. Specifically, the supported checks are:
+
+* Unknown Nullness
+* Property Access
+* No Hard Kotlin keywords
+* Lambda Parameters Last
+
+## Android Studio
+
+To enable these checks, go to **File > Preferences > Editor > Inspections** and check the rules that you want to enable under Kotlin Interoperability:
+
+<img src="{{ site.baseurl }}/assets/kotlin_interop_checks_settings.png"/>
+
+Once you have checked the rules you would like to enable, the new checks will run when you run your code inspections (**Analyze > Inspect Code…**)
+
+## Command-line builds
+
+To enable these checks from the command-line builds, add the following line in your `build.gradle` file:
+
+```groovy
+android {
+
+    ...
+
+    lintOptions {
+        check 'Interoperability'
+    }
+}
+```
+
+For the full set of configurations supported inside lintOptions, refer to the [Android Gradle DSL reference](https://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.LintOptions.html).
+
+Then, run `./gradlew lint` from the command-line.
