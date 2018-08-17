@@ -586,6 +586,8 @@ Identifiers use only ASCII letters and digits, and, in a small number of cases n
 
 Special prefixes or suffixes, like those seen in the examples `name_`, `mName`, `s_name`, and `kName`, are not used except in the case of backing properties (see ["Backing properties"](#backing-properties)).
 
+Top-level functions may be named the same as a type if they serve as factories for that type.
+
 
 ## Package Names
 
